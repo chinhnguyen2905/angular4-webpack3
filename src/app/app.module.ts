@@ -12,11 +12,13 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NavComponent} from './nav/nav.component';
 
 import { format } from 'url';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
 	imports: [
 		BrowserModule,
+		FormsModule,
 		AppRoutingModule,
 	],
 	declarations: [ AppComponent,NavComponent],

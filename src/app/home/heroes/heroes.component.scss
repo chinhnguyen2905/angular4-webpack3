@@ -1,0 +1,41 @@
+ul{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    float:left;
+    .selected{
+        background-color: #CFD8DC !important;
+        color: white;
+    }
+    li{
+        position: relative;
+        list-style-type: none;
+        margin: 5px 0;
+        background-color: #EEE;
+        position: relative;
+        left: 0;
+        border-radius: 4px;
+        cursor: pointer;
+        .badge{
+            margin: 0;
+            display: inline-block;
+            color: white;
+            padding: 10px;
+            background-color: #607D8B;
+            border-radius: 4px 0 0 4px;
+            margin-right: 10px;
+        }
+        &:hover{
+            color: #607D8B;
+            background-color: #DDD;
+            left:2px;
+        }
+    }
+}
+
+.detail-hero-app{
+    padding: 50px;
+    width: 80%;
+    float: right;
+}
