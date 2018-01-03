@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
-
+/*App component*/ 
 import { NavComponent} from './nav/nav.component';
 import {ShopComponent} from './shop/shop.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
