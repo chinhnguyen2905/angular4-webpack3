@@ -10,10 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 /*App component*/ 
 import { NavComponent} from './nav/nav.component';
-import {ShopComponent} from './shop/shop.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductsComponent } from './products/products.component';
-import { HomeComponent } from './home/home.component';
 
 import { format } from 'url';
 
@@ -23,12 +19,7 @@ import { format } from 'url';
 		BrowserModule,
 		AppRoutingModule,
 	],
-	declarations: [ AppComponent,
-					NavComponent,
-					ShopComponent,
-					PageNotFoundComponent,
-					ProductsComponent,
-					HomeComponent],
+	declarations: [ AppComponent,NavComponent],
 	providers: [{ provide: AppConfig, useValue: process.env.APP_CONFIG }, { provide: APP_BASE_HREF, useValue: '/' }],
 	bootstrap: [AppComponent]
 })
