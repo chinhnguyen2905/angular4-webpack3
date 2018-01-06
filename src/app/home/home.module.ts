@@ -2,24 +2,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { CommonModule } from '@angular/common';
-import { HeroesComponent } from './heroes/heroes.component';
-import { DetailHeroComponent } from './detail-hero/detail-hero.component';
-import { FormsModule } from '@angular/forms';
 
-const routesConfig: Routes = [
-	{ path:'home', component: HomeComponent }
-];
+import { FormsModule } from '@angular/forms';
+import { HomeRoutingModule } from './home-routing.module';
+
+//const routesConfig: Routes = [
+
+//];
 
 @NgModule({
 	imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forChild(routesConfig)
+        HomeRoutingModule,
+       // RouterModule.forChild(routesConfig)
     ],
     declarations:[
-        HomeComponent,
-        HeroesComponent,
-        DetailHeroComponent
     ]
 })
 

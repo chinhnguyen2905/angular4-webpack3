@@ -1,0 +1,32 @@
+.header-home{
+    nav{
+        a{
+            display: block;
+            background: lightblue;
+            padding: 10px;
+            float: left;
+            border-radius: 5px;
+            margin: 5px;
+            text-decoration: none;
+            border: none;
+            &:hover{
+                background: darkblue;
+                color: white;
+            }
+        }
+        .active{
+            background: darkblue;
+            color: white;
+        }
+       
+    }
+}
+
+
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}

@@ -13,6 +13,7 @@ import { NavComponent} from './nav/nav.component';
 
 import { format } from 'url';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 		BrowserModule,
 		FormsModule,
 		AppRoutingModule,
+		HttpModule
 	],
 	declarations: [ AppComponent,NavComponent],
 	providers: [{ provide: AppConfig, useValue: process.env.APP_CONFIG }, { provide: APP_BASE_HREF, useValue: '/' }],

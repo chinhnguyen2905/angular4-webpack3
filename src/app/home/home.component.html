@@ -1,2 +1,11 @@
-<app-heroes></app-heroes>
+<h1>{{title}}</h1>
+<div class="header-home clearfix">
+    <nav>
+        <a  routerLink="./dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">DashBoard</a>
+        <a  routerLink="./heroes" routerLinkActive="active">Heros</a>
+    </nav>
+</div>
 
+<section class="clearfix">
+    <router-outlet></router-outlet>
+</section>

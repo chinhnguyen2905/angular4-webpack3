@@ -7,9 +7,13 @@ import { HomeModule } from './home/home.module';
 import { CommonModule } from '@angular/common';
 import { ProductsModule } from './products/products.module';
 import { ShopModule } from './shop/shop.module';
+import { LoginComponent } from './login/login.conponent';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: 'home', loadChildren:'./home/home.module#HomeModule'},
+	{ path:'login', component: LoginComponent},
 	{ path:'**',component:PageNotFoundComponent}
 ];
 
@@ -17,12 +21,14 @@ const routes: Routes = [
 	imports: [
 		HomeModule,
 		ProductsModule,
+		FormsModule,
 		ShopModule,
 		RouterModule.forRoot(routes),
 		CommonModule
 	],
 	declarations:[
-					PageNotFoundComponent
+					PageNotFoundComponent,
+					LoginComponent
 				],
 	exports: [RouterModule]
 })

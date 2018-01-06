@@ -1,0 +1,30 @@
+    getPost(){
+        const url = 'http://locallost:300/getdata';
+          return this.http.get(url)
+        .toPromise()
+        .then(res => res.json()) //as Customer or Customer[]
+        .catch(err=> console.log(err));
+    }
+    putPost(value:Object){
+        const url = '${this.UrlService}/${value.id}';
+        const headers = new Headers({'Content-Type':'application/json'});
+        const body = JSON.stringify(value);
+        return this.http.put(url,body,{headers})
+        .toPromise()
+        .then(() => value)
+        .catch(err=> console.log(err));
+    }
+
+    deletePost(id:number){
+        const url = '${this.UrlService}/${id}';
+        const headers = new Headers({'Content-Type':'application/json'});
+             return this.http.delete(url,{headers})
+        .toPromise()
+        .then(()=> null)
+        .catch(err=> console.log(err));
+    }
+
+
+
+    //link reference resful service call api
+ //   http://www.thetechieshouse.com/angular-4-rest-api-with-http-5-minutes/

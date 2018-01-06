@@ -1,0 +1,45 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.container{
+    h2{
+        color: darkgreen;
+    }
+    background: lightblue;
+    border: 1px solid blueviolet;
+   // text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    padding: 30px;
+    margin-top: 30px;
+    .email{
+        label{
+           width: 20%;
+        }
+        input[type=text]{
+          width: 40%;
+        }
+        span{
+        }
+    }
+    .password{
+        label{
+            width: 20%;
+        }
+        input[type=password]{
+            width: 40%;
+         }
+    }
+    .submitBtn{
+        background:darkblue;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        &:hover{
+           background: blue;
+        }
+    }
+}
+

@@ -1,0 +1,30 @@
+
+<form class="container" (ngSubmit)="onSubmit(formSignin);" #formSignin="ngForm">
+    <h2>LOGIN FORM(HTTP POST REQUEST)</h2>
+    <div class="email">
+        <label >Email:</label>
+        <input type="text" name="email" ngModel #txtEmail="ngModel" placeholder="Enter your email" required email>
+        <span *ngIf="checkValidate(formSignin)">{{messageError}}</span>
+    </div>
+    <div class="password">
+        <label >Password:</label>
+        <input type="password"
+         name="password"
+         ngModel
+         #txtPassword="ngModel"
+         minlength="6"
+         pattern="[a-z]*"
+         placeholder="Enter your password"
+         required>
+        <span *ngIf="(txtPassword.touched && txtPassword.errors?.required) ||( txtPassword.touched && txtPassword.errors?.password)">Password is required!</span>
+    </div>
+    <div ngModelGroup = "subjects">
+        <label><input type="checkbox" [ngModel]="true" name="nodejs">Nodejs</label>
+        <label><input type="checkbox" [ngModel]="false" name="angularjs">Angularjs</label>
+        <label><input type="checkbox" [ngModel]="false" name="createjs">CreateJs</label>
+
+    </div>
+    <button   class="submitBtn">Login</button>
+    <p>{{txtPassword.errors | json}}</p>
+    <p>{{formSignin.value | json}}</p>
+</form> 

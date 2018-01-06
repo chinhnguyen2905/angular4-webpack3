@@ -1,0 +1,25 @@
+.grid{
+    margin: 0;
+    padding: 0;
+    .dashboard{
+        .module{
+            float: left;
+            display: block;
+            padding: 20px;
+            text-align: center;
+            color: #eee;
+            list-style-type: none;
+           // max-height: 120px;
+            //min-width: 120px;
+            background-color: #607D8B;
+            border-radius: 2px;
+            &:hover{
+                background: blue;
+            }
+            h4{
+              // text-align: center; 
+            }
+        }
+    }
+    
+}

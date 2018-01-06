@@ -1,0 +1,6 @@
+<div *ngIf="hero$|async as hero" class="detail-dashboard">
+    <h1>Detail Dashboard!</h1>
+    <h2>ID: {{hero.id}}</h2>
+    <h2>Name: {{hero.name}}</h2>
+    <a class="btn btn-info" (click)="backDashboard(hero)" >Back</a>
+</div>
