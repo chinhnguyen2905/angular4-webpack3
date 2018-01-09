@@ -9,6 +9,7 @@ import { ProductsModule } from './products/products.module';
 import { ShopModule } from './shop/shop.module';
 import { LoginComponent } from './login/login.conponent';
 import { FormsModule } from '@angular/forms';
+import { LoginModule } from './login/login.module';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,12 +24,12 @@ const routes: Routes = [
 		ProductsModule,
 		FormsModule,
 		ShopModule,
+		LoginModule,
 		RouterModule.forRoot(routes),
 		CommonModule
 	],
 	declarations:[
-					PageNotFoundComponent,
-					LoginComponent
+					PageNotFoundComponent
 				],
 	exports: [RouterModule]
 })

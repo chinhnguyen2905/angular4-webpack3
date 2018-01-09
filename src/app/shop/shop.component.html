@@ -1,4 +1,5 @@
 <div class="container weather">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading> 
     <h1>WEATHER (http get method)</h1>
     <h2>{{cityname === '' ? 'Input your city name' : ('Weather '+ cityname + ' is now ' + temperature)}} </h2>
    <form (ngSubmit)="getWeather()" #formWeather="ngForm">
@@ -7,3 +8,18 @@
    </form>
     
 </div>
+<div #popupError >
+    <div class="modal-popup">
+        <div class="content">
+             <a class="close" (click)="closePopup();" href="#">&times;</a>
+             <div class="message-content">
+                <p>City is not found!</p>
+                <p>Please input a right city!</p>
+             </div>
+            
+        </div>
+    </div>
+</div>
+
+   
+    

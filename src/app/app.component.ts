@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 import '../public/scss/styles.scss';
 
@@ -7,4 +7,10 @@ import '../public/scss/styles.scss';
 	templateUrl: 'app.component.html',
 	styleUrls: ['app.component.scss']
 })
-export class AppComponent { appName = 'Setting up Angular 4 Webpack 3 Application'; }
+export class AppComponent implements OnInit{ 
+	appName = 'Setting up Angular 4 Webpack 3 Application'; 
+	constructor(){};
+	ngOnInit(){
+		
+	}
+}

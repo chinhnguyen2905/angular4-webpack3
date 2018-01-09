@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 //const routesConfig: Routes = [
 
@@ -14,7 +15,8 @@ import { HomeRoutingModule } from './home-routing.module';
 	imports: [
         CommonModule,
         FormsModule,
-        HomeRoutingModule,
+        HomeRoutingModule
+       // FlexLayoutModule
        // RouterModule.forChild(routesConfig)
     ],
     declarations:[

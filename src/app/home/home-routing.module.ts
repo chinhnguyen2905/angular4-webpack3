@@ -8,13 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { DashboardListComponent } from './dashboard/dashboard-list.component';
 import { DashboardDetailComponent } from './dashboard/dashboard-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 const routes: Routes = [
-    { path: 'home',
+    { path: '',
       component: HomeComponent,
       children : [
-        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         { path: 'dashboard',
           component: DashboardComponent,
           children:[
@@ -30,6 +31,7 @@ const routes: Routes = [
 	imports: [
         CommonModule,
         FormsModule,
+        FlexLayoutModule,
 		RouterModule.forChild(routes),
 	],
 	declarations:[

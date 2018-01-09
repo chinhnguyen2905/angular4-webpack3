@@ -1,0 +1,20 @@
+
+<form class="container" (ngSubmit)="onSubmit();" [formGroup]="formSignin">
+        <h2>REACTIVEFORM</h2>
+        <div class="email">
+            <label >Email:</label>
+            <input type="text" formControlName="email" placeholder="Enter your email" required email>
+            <p *ngIf="formSignin.get('email').invalid && formSignin.get('email').touched">Email is required!</p>
+        </div>
+        <div class="password">
+            <label >Password:</label>
+            <input type="password" formControlName="password" placeholder="Enter your password" required>
+        </div>
+        <div formGroupName="subjects" >
+            <label><input type="checkbox" formControlName="nodeJS" name="nodeJS">Nodejs</label>
+            <label><input type="checkbox" formControlName="angularJS" name="angularJS">Angularjs</label>
+            <label><input type="checkbox" formControlName="nodeJS" name="createJS">CreateJs</label>
+        </div>createJS
+        <button [disabled]="formSignin.invalid" class="submitBtn">Login</button>
+    </form> 
+    

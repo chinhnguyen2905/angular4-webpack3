@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif; }
+
+* {
+  box-sizing: border-box; }
+
+.ng2-opd-popup-content-main {
+  background-color: pink !important; }
+
+/*# sourceMappingURL=app.css.map*/

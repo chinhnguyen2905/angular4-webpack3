@@ -19,6 +19,7 @@
     "@angular/compiler": "^4.3.4",
     "@angular/compiler-cli": "^4.3.4",
     "@angular/core": "^4.3.4",
+    "@angular/flex-layout": "^2.0.0-beta.12",
     "@angular/forms": "^4.3.4",
     "@angular/http": "^4.3.4",
     "@angular/platform-browser": "^4.3.4",
@@ -27,6 +28,7 @@
     "@angular/router": "^4.3.4",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
+    "ngx-loading": "^1.0.10",
     "rxjs": "^5.4.3",
     "zone.js": "^0.8.16"
   },

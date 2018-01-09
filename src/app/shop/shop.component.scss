@@ -2,3 +2,36 @@
     padding : 20px;
     border: 1px solid red;
 }
+.modal-popup{
+   // background: rgba(0, 0, 0, 0.7);
+   // transition: opacity 500ms;
+    // visibility: hidden;
+   //opacity: 0;
+   
+    .content{
+       // background: pink;
+        //padding: 20px 40px;
+        text-align: center;
+        .message-content{
+            p{
+                color: blue;
+            }
+            
+        }
+        .close{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgb(100, 4, 4);
+            &:hover{
+                color: #06D85F;
+            }
+        }
+       
+    }
+   
+}
