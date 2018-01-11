@@ -1,5 +1,7 @@
 import { Component,OnInit,ViewChild} from '@angular/core';
 import { ShopService } from './shop.service';
+import { MatDialog } from '@angular/material';
+import { PopupWeatherComponent } from './weather-popup/weather-popup.component';
 //import { Popup } from 'ng2-opd-popup';
 
 @Component({
@@ -14,7 +16,7 @@ export class ShopComponent implements OnInit{
 	cityname ="";
 	cityNameText = "";
 	isShowPopup = false;
-    constructor(private shopService:ShopService){
+    constructor(private shopService:ShopService,public dialog: MatDialog){
 
 	}
 //	@ViewChild('popupError') popupError: Popup;
@@ -33,8 +35,6 @@ export class ShopComponent implements OnInit{
 		})
 		.catch(err=> {
 			console.log(err);
-			this.cityname ="";
-			//this.isShowPopup =  true;
 			this.showPopup();
 			this.loading = false;
 		});
@@ -42,23 +42,19 @@ export class ShopComponent implements OnInit{
 	}
 
 	showPopup(){
-		
-		/*this.popupError.options = {
-			header: "Message",
-			color: "blue", // red, blue.... 
-			widthProsentage: 20, // The with of the popou measured by browser width 
-			animationDuration: 1, // in seconds, 0 = no animation 
-			showButtons: false, // You can hide this in case you want to use custom buttons 
-			confirmBtnContent: "OK", // The text on your confirm button 
-			cancleBtnContent: "Cancel", // the text on your cancel button 
-			confirmBtnClass: "btn btn-info", // your class for styling the confirm button 
-			cancleBtnClass: "btn btn-danger", // you class for styling the cancel button 
-			animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
-		};
-			this.popupError.show(this.popupError.options);
-			console.log(this.popupError.options);*/
-	}
-	closePopup(){
-		//this.popupError.hide();
+		let dialogRef = this.dialog.open(PopupWeatherComponent,{
+            data:{
+                message:'City is not found! Please input a right city'
+            },
+			width: '300px',
+			height: '250px',
+            backdropClass:"weather"
+        })
+        console.log(dialogRef );
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`); 
+		   // this.result = result;
+		   this.cityNameText ="";
+        });
 	}
 }

@@ -1,0 +1,47 @@
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+        <div fxFlex="30">
+                <mat-sidenav-container class="example-container">
+                        <mat-sidenav #sidenav mode="push" [(opened)]="opened">
+                                Sidenav content
+                        </mat-sidenav>
+
+                        <mat-sidenav-content>
+                                <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+                                <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+                        
+                        </mat-sidenav-content>
+                </mat-sidenav-container>
+
+        </div>
+
+        <hr>
+
+        <div fxFlex="70">
+                <mat-drawer-container class="example-container" autosize>
+                        <mat-drawer #drawer class="example-sidenav" mode="side">
+                                <p>Auto-resizing sidenav</p>
+                                <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+                                <button (click)="showFiller = !showFiller" mat-raised-button>
+                                Toggle extra text
+                                </button>
+                        </mat-drawer>
+
+                        <div class="example-sidenav-content">
+                                <button type="button" mat-button (click)="drawer.toggle()">
+                                Toggle sidenav
+                                </button>
+                        </div>
+
+                </mat-drawer-container>
+        </div>  
+</div>
+
+<mat-card>
+        <mat-slide-toggle #slideBtn1 labelPosition="before" color ="primary" checked="true" disabled="false" class="slide-toggle">Slide me!</mat-slide-toggle>
+        <br>
+        <mat-slide-toggle #slideBtn2  labelPosition="after" color ="primary" checked="true" disabled="false" class="slide-toggle">Slide me!</mat-slide-toggle>
+        <button mat-raised-button (click)="getValue(slideBtn1)">Click</button>
+</mat-card>
+
+
+              

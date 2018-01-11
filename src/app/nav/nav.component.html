@@ -1,10 +1,17 @@
-<nav>
-     <ul>
-        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
-        <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
-        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+<nav >
+     <ul fxLayout fxLayout.xs="column" fxLayoutAlign="space-between">
+        <li fxFlex >
+            <a [matMenuTriggerFor]="appMenu" routerLink="/home"  routerLinkActive="active">Home</a>
+        </li>
+        <li fxFlex><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+        <li fxFlex><a routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li fxFlex><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li fxFlex="initial"><a routerLink="/examples" routerLinkActive="active">Example Material</a></li>
     </ul>
    
 </nav>
 
+<mat-menu class="submenu" #appMenu="matMenu" xPostion="after" [overlapTrigger]="false">
+    <a class="item-sub" mat-menu-item routerLink="/dashboard" >Dashboard</a>
+    <a class="item-sub" mat-menu-item routerLink="/heroes" >Hero</a >
+</mat-menu>

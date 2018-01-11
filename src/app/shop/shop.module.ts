@@ -5,7 +5,9 @@ import { ShopComponent } from './shop.component';
 import { ShopService } from './shop.service';
 import { FormsModule } from '@angular/forms';
 import { LoadingModule } from 'ngx-loading';
-//import { PopupModule } from 'ng2-opd-popup/components/popup/popup.module';
+import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { PopupWeatherComponent } from './weather-popup/weather-popup.component';
 
 const routesConfig: Routes = [
 	{ path:'shop', component: ShopComponent }
@@ -16,12 +18,15 @@ const routesConfig: Routes = [
         CommonModule,
         FormsModule,
         LoadingModule,
-       // PopupModule,
+        MaterialModule,
+        FlexLayoutModule,
         RouterModule.forChild(routesConfig)
     ],
     declarations:[
-        ShopComponent
+        ShopComponent,
+        PopupWeatherComponent
     ],
+    entryComponents:[PopupWeatherComponent],
     providers:[ShopService]
 })
 

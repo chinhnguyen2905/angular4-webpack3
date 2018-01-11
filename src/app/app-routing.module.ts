@@ -10,23 +10,26 @@ import { ShopModule } from './shop/shop.module';
 import { LoginComponent } from './login/login.conponent';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
+import { ExamplesMaterialModule } from './example-material/example-material.module';
+import { MaterialModule } from './material.module';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', loadChildren:'./home/home.module#HomeModule'},
 	{ path:'login', component: LoginComponent},
-	{ path:'**',component:PageNotFoundComponent}
+	{ path:'**',component:PageNotFoundComponent},
 ];
 
 @NgModule({
 	imports: [
+		CommonModule,
 		HomeModule,
 		ProductsModule,
+		ExamplesMaterialModule,
 		FormsModule,
 		ShopModule,
 		LoginModule,
-		RouterModule.forRoot(routes),
-		CommonModule
+		RouterModule.forRoot(routes)
 	],
 	declarations:[
 					PageNotFoundComponent

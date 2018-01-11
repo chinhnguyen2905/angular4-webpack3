@@ -15,9 +15,9 @@ nav{
                 padding: 14px 22px;
                 text-decoration: none;
                 text-transform: uppercase;
-    
+                 transition: all 200ms;
                 &:hover {
-                    background: #444;
+                    background: rgb(211, 144, 144);
                 }
             }
         } 
@@ -25,5 +25,13 @@ nav{
     
 }
 .active{
-    background: #444;
+    background: rgb(221, 161, 161);
 }
+
+    .item-sub{
+       
+            text-decoration: none;
+           text-transform: uppercase;
+            transition: all 200ms;
+                
+    }

@@ -1,0 +1,32 @@
+
+.mat-menu-item{
+    .icon{
+        color: purple;
+        font-size: 20px !important;
+        padding-right: 16px !important;
+    }
+}
+
+
+.button-menu-icon{
+    background: yellow;
+    .icon-diapad{
+        color: red;
+    }
+}
+.abc{
+    list-style-type: none;
+    text-decoration: none !important;
+    color: aqua;
+}
+
+.mat-menu-item-highlighted:not([disabled]), .mat-menu-item:focus:not([disabled]), .mat-menu-item:hover:not([disabled]){
+    background: yellow;
+}
+.mat-menu-panel{
+    background: lightpink;
+}
+.mat-menu-content {
+     padding-top: 0px !important; 
+    padding-bottom: 0px !important; 
+}

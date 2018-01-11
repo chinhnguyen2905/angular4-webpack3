@@ -1,0 +1,12 @@
+<div class="content">
+    <span tabindex="-1" class="closebtn" (click)="closePopup();">&times;</span>
+    <h1 mat-dialog-title>MESSAGE</h1>
+    <hr>
+    <mat-dialog-content class="message-content">{{data.message}}</mat-dialog-content>
+    <hr>
+   
+    <button tabindex="-1" mat-button [mat-dialog-close]="true">Yes</button>
+  
+    
+   
+</div>

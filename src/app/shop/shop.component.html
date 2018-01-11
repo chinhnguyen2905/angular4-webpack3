@@ -1,25 +1,27 @@
-<div class="container weather">
-    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading> 
-    <h1>WEATHER (http get method)</h1>
-    <h2>{{cityname === '' ? 'Input your city name' : ('Weather '+ cityname + ' is now ' + temperature)}} </h2>
-   <form (ngSubmit)="getWeather()" #formWeather="ngForm">
-        <input name="city" type="text" placeholder="Enter your city name" [(ngModel)] ="cityNameText" required>
-        <button class ="btn btn-info" [disabled]="formWeather.invalid">Submit</button>
-   </form>
-    
-</div>
-<div #popupError >
-    <div class="modal-popup">
-        <div class="content">
-             <a class="close" (click)="closePopup();" href="#">&times;</a>
-             <div class="message-content">
-                <p>City is not found!</p>
-                <p>Please input a right city!</p>
-             </div>
-            
+<mat-card>
+    <div fxLayout fxLayout.xs="column" fxLayoutWrap  class="weather">
+        <div fxFlex="100">
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading> 
         </div>
+        <div fxFlex="100">
+            <h1>WEATHER (http get method)</h1>
+            <h2>{{cityname === '' ? 'Input your city name' : ('Weather '+ cityname + ' is now ' + temperature)}} </h2>
+        </div>
+       
+       <form fxFlex="100" fxLayout fxLayout.xs ="column" fxLayoutGap="10px" fxLayout.sm ="column" (ngSubmit)="getWeather()" #formWeather="ngForm">
+            <mat-form-field fxFlex="30">
+                <input matInput  name="city" type="text" placeholder="Enter your city name" [(ngModel)] ="cityNameText" required>
+            </mat-form-field>
+            <div fxFlex="20" class="submit-btn">
+                <button mat-raised-button color="primary" [disabled]="formWeather.invalid">Submit</button>
+            </div>
+            
+       </form>
+        
     </div>
-</div>
+    
+</mat-card>
+
 
    
     

@@ -17,15 +17,19 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpModule } from '@angular/http';
 import { LoadingModule } from 'ngx-loading';
 import { ANIMATION_TYPES } from 'ngx-loading';
-//import { PopupModule } from 'ng2-opd-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+import { PopupComponent } from './example-material/popup/popup.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
 	imports: [
 		BrowserModule,
 		FormsModule,
-		AppRoutingModule,
+		BrowserAnimationsModule,
 		FlexLayoutModule,
-		//PopupModule.forRoot(),
+		MaterialModule,
+		AppRoutingModule,
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
 			backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
@@ -37,6 +41,9 @@ import { ANIMATION_TYPES } from 'ngx-loading';
 		HttpModule
 	],
 	declarations: [ AppComponent,NavComponent],
+	entryComponents: [
+        PopupComponent
+    ],
 	providers: [{ provide: AppConfig, useValue: process.env.APP_CONFIG }, { provide: APP_BASE_HREF, useValue: '/' }],
 	bootstrap: [AppComponent]
 })

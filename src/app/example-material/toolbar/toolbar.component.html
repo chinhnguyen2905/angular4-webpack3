@@ -1,0 +1,104 @@
+<mat-card>
+    <h1>TOOLBAR</h1>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+        <span>Custom Toolbar</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+        <span>Second Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">verified_user</mat-icon>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+        <span>Third Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">favorite</mat-icon>
+        <mat-icon class="example-icon">delete</mat-icon>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</mat-card>
+<mat-card>
+    <mat-toolbar color="warn">
+        <span>Second Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon (click) = "callFunc();" class="example-icon">home</mat-icon>
+    </mat-toolbar>
+</mat-card>
+
+<hr>
+
+<mat-card>
+        <mat-card-content>
+          <h2 class="example-h2">Progress spinner configuration</h2>
+      
+          <section class="example-section">
+            <label class="example-margin">Color:</label>
+            <mat-radio-group [(ngModel)]="color">
+              <mat-radio-button class="example-margin" value="primary">
+                Primary
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="accent">
+                Accent
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="warn">
+                Warn
+              </mat-radio-button>
+            </mat-radio-group>
+          </section>
+      
+          <section class="example-section">
+            <label class="example-margin">Mode:</label>
+            <mat-radio-group [(ngModel)]="mode">
+              <mat-radio-button class="example-margin" value="determinate">
+                Determinate
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="indeterminate">
+                Indeterminate
+              </mat-radio-button>
+            </mat-radio-group>
+          </section>
+      
+          <section class="example-section" *ngIf="mode == 'determinate'">
+            <label class="example-margin">Progress:</label>
+            <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <h2 class="example-h2">Result</h2>
+      
+          <mat-progress-spinner
+              class="example-margin"
+              [color]="color"
+              [mode]="mode"
+              [value]="value">
+          </mat-progress-spinner>
+        </mat-card-content>
+</mat-card>
+
+<hr>
+
+<mat-card>
+        <mat-card-content>
+          <h2 class="example-h2">PROGRESSBAR</h2>
+          <section class="example-section">
+                <label class="example-margin">Progress:</label>
+                <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+          </section>
+           <section class="progresbar-section">
+            <mat-progress-bar
+                class="example-margin"
+                color="primary"
+                mode="buffer"
+                [value]="value">
+            </mat-progress-bar>
+          </section>
+        </mat-card-content>
+</mat-card>
+      
+
+
+      
