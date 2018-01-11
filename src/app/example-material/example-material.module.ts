@@ -13,9 +13,11 @@ import { PopupComponent } from './popup/popup.component';
 import { PopupContentComponent } from './popup/popup-content.component';
 import { MaterialModule } from '../material.module';
 import { DataTableComponent } from './data-table/data-table.component';
+import { AuthGuard } from '../authguard/auth-guard.service';
+import { CanDeactivateGuard } from '../authguard/can-deactivate-guard.service';
 
 const routesConfig: Routes = [
-	{ path:'examples', component: ExampleMaterialComponent }
+	{ path:'examples', component: ExampleMaterialComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const routesConfig: Routes = [
     entryComponents: [
         PopupContentComponent
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers:[CanDeactivateGuard]
 })
 
 export class ExamplesMaterialModule { }

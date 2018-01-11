@@ -1,20 +1,25 @@
 
-<form class="container" (ngSubmit)="onSubmit();" [formGroup]="formSignin">
+<form class="reactive-form" (ngSubmit)="onSubmit();" [formGroup]="formSignin">
         <h2>REACTIVEFORM</h2>
         <div class="email">
             <label >Email:</label>
-            <input type="text" formControlName="email" placeholder="Enter your email" required email>
-            <p *ngIf="formSignin.get('email').invalid && formSignin.get('email').touched">Email is required!</p>
+            <mat-form-field>
+                <input matInput type="text" formControlName="email" placeholder="Enter your email" required email>
+                <mat-error *ngIf="formSignin.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
         </div>
         <div class="password">
             <label >Password:</label>
-            <input type="password" formControlName="password" placeholder="Enter your password" required>
+            <mat-form-field>
+              <input matInput type="password" formControlName="password" placeholder="Enter your password" required>
+            </mat-form-field>
         </div>
         <div formGroupName="subjects" >
-            <label><input type="checkbox" formControlName="nodeJS" name="nodeJS">Nodejs</label>
-            <label><input type="checkbox" formControlName="angularJS" name="angularJS">Angularjs</label>
-            <label><input type="checkbox" formControlName="nodeJS" name="createJS">CreateJs</label>
-        </div>createJS
-        <button [disabled]="formSignin.invalid" class="submitBtn">Login</button>
-    </form> 
+            <label><mat-checkbox formControlName="nodeJS" name="nodeJS">Nodejs</mat-checkbox></label>
+            <label><mat-checkbox formControlName="angularJS" name="angularJS">Angularjs</mat-checkbox></label>
+            <label><mat-checkbox formControlName="nodeJS" name="createJS">CreateJs</mat-checkbox></label>
+
+        </div>
+        <button [disabled]="" class="submitBtn">Login</button>
+ </form> 
     

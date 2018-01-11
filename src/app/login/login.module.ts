@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { ReactiveComponent } from './reactiveform/reactiveform.component';
 import { LoginComponent } from './login.conponent';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthGuard } from '../authguard/auth-guard.service';
+import { AuthService } from '../authguard/auth.service';
 
 
 
@@ -11,11 +15,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 	imports: [
         CommonModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        FlexLayoutModule,
+        MaterialModule
     ],
     declarations:[
         ReactiveComponent,
         LoginComponent
+    ],
+    providers:[
+        AuthGuard,
+        AuthService
     ]
 })
 
