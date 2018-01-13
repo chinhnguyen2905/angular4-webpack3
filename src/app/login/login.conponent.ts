@@ -12,16 +12,16 @@ export class LoginComponent implements OnInit{
     messageError ="";
      constructor(private loginService:LoginService){}
      ngOnInit(){
-         
+       
+       
      }
      onSubmit(formSignin:NgForm){
         //send from data to service
         if(formSignin.valid){
-            this.loginService.sendPost(formSignin.value)
+            this.loginService.login(formSignin.value)
             .then(result => console.log(result))
             .catch(err=> console.log(err));
        }
-       
      }
 
      checkValidate(formSignin:NgForm){

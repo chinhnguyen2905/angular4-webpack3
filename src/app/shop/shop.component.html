@@ -21,6 +21,13 @@
     </div>
     
 </mat-card>
+<br><br>
+
+<mat-card >
+    <h1 class="head">GET RES API WITH AUTHENTICATE USER(TOKEN)</h1>
+    <button mat-raised-button color="primary" (click)="getAPI();">GET API</button>
+    <mat-progress-spinner mode="indeterminate" *ngIf="isShowSpinner"  class="spinner-loading" color="primary"></mat-progress-spinner>
+</mat-card>
 
 
    

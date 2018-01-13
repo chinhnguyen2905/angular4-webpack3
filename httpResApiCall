@@ -5,6 +5,15 @@
         .then(res => res.json()) //as Customer or Customer[]
         .catch(err=> console.log(err));
     }
+     sendPost(value:Object){
+        const url = "http://localhost:3000/signin";
+        const headers = new Headers({'Content-Type':'application/json'});
+        const body = JSON.stringify(value);
+        return this.http.post(url,body,{headers})
+        .toPromise()
+        .then(res => res.json());
+    }
+
     putPost(value:Object){
         const url = '${this.UrlService}/${value.id}';
         const headers = new Headers({'Content-Type':'application/json'});

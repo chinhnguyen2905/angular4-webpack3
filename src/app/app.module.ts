@@ -21,6 +21,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { PopupComponent } from './example-material/popup/popup.component';
 import { MaterialModule } from './material.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './authguard/auth.interceptor';
+import { RequestInterceptorService } from './authguard/request-interceptor.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	imports: [
@@ -30,6 +34,7 @@ import { MaterialModule } from './material.module';
 		FlexLayoutModule,
 		MaterialModule,
 		AppRoutingModule,
+		HttpClientModule,
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
 			backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
@@ -44,7 +49,26 @@ import { MaterialModule } from './material.module';
 	entryComponents: [
         PopupComponent
     ],
-	providers: [{ provide: AppConfig, useValue: process.env.APP_CONFIG }, { provide: APP_BASE_HREF, useValue: '/' }],
+	providers: [
+		{ 
+			provide: AppConfig,
+		  	useValue: process.env.APP_CONFIG
+		},
+		{ 
+			provide: APP_BASE_HREF,
+		 	 useValue: '/'
+		},
+		/*{
+			provide:HTTP_INTERCEPTORS,
+			useClass:AuthInterceptor,
+			multi:true
+		},*/
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: RequestInterceptorService,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

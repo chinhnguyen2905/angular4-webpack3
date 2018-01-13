@@ -1,25 +1,29 @@
 
-<form class="reactive-form" (ngSubmit)="onSubmit();" [formGroup]="formSignin">
-        <h2>REACTIVEFORM</h2>
-        <div class="email">
-            <label >Email:</label>
-            <mat-form-field>
+<form *ngIf="!authService.isLoggedIn" fxLoayout="row" fxLayoutWrap fxLayoutAlign="center" class="reactive-form" (ngSubmit)="onSubmit();" [formGroup]="formSignin">
+        <h1 class="title">REACTIVEFORM</h1>
+        <div fxFlex fxLoayout class="email">
+           <div fxFlex="20" fxFlexOffset="15"  fxFlexAlign="center">
+                <label >Email:</label>
+            </div>
+            <mat-form-field fxFlex="50">
                 <input matInput type="text" formControlName="email" placeholder="Enter your email" required email>
                 <mat-error *ngIf="formSignin.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
-        <div class="password">
-            <label >Password:</label>
-            <mat-form-field>
+        <div fxFlex fxLoayout class="password">
+            <div fxFlex="20" fxFlexOffset="15" fxFlexAlign="center">
+                <label >Password:</label>
+            </div>
+            <mat-form-field fxFlex="50">
               <input matInput type="password" formControlName="password" placeholder="Enter your password" required>
             </mat-form-field>
         </div>
-        <div formGroupName="subjects" >
+        <div fxFlex="100" fxFlexOffset="15" formGroupName="subjects" >
             <label><mat-checkbox formControlName="nodeJS" name="nodeJS">Nodejs</mat-checkbox></label>
-            <label><mat-checkbox formControlName="angularJS" name="angularJS">Angularjs</mat-checkbox></label>
+            <label><mat-checkbox  formControlName="angularJS" name="angularJS">Angularjs</mat-checkbox></label>
             <label><mat-checkbox formControlName="nodeJS" name="createJS">CreateJs</mat-checkbox></label>
-
         </div>
-        <button [disabled]="" class="submitBtn">Login</button>
+        <button mat-raised-button color="primary">Login</button>
  </form> 
+ <button mat-raised-button color="primary" *ngIf="authService.isLoggedIn" (click)="logout();">Logout</button>
     

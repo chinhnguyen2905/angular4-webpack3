@@ -1,4 +1,4 @@
-<div fxLayout fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+<div class="form-container" fxLayout fxLayout.xs="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
     <form fxFlex="50" class="container" (ngSubmit)="onSubmit(formSignin);" #formSignin="ngForm">
             <h2>LOGIN FORM(HTTP POST REQUEST)</h2>
             <div class="email">
@@ -28,7 +28,7 @@
             <p>{{txtPassword.errors | json}}</p>
             <p>{{formSignin.value | json}}</p>
         </form> 
-    <div fxFlex="50" fxFlexAlign="center" fxFlexFill>
+    <div fxFlex="50" fxFlexAlign="center">
         <reactiveform-app></reactiveform-app> 
     </div>
        
