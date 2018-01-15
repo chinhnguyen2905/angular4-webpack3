@@ -12,12 +12,21 @@ import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { ExamplesMaterialModule } from './example-material/example-material.module';
 import { MaterialModule } from './material.module';
+import { BPMNIOComponent } from './bpmnio/viewer/bpmnio.component';
+import { OverlaysComponent } from './bpmnio/overlays/overlays.component';
+import { PropertiesPanelComponent } from './bpmnio/properties-pannel/properties-panel.component';
+import { ToDoListComponent } from './todolist/todolist.component';
+import { ToDoItemComponent } from './todolist/todo-item/todo-item.component';
+
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', loadChildren:'./home/home.module#HomeModule'},
 	{ path:'login', component: LoginComponent},
-	{ path:'**',component:PageNotFoundComponent},
+	{ path:'bpmnio',component:BPMNIOComponent},
+	{ path:'todolist',component:ToDoListComponent},
+	{ path:'**',component:PageNotFoundComponent}
+	
 ];
 
 @NgModule({
@@ -29,10 +38,16 @@ const routes: Routes = [
 		FormsModule,
 		ShopModule,
 		LoginModule,
+		MaterialModule,
 		RouterModule.forRoot(routes)
 	],
 	declarations:[
-					PageNotFoundComponent
+					PageNotFoundComponent,
+					BPMNIOComponent,
+					OverlaysComponent,
+					PropertiesPanelComponent,
+					ToDoListComponent,
+					ToDoItemComponent
 				],
 	exports: [RouterModule]
 })

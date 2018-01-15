@@ -1,11 +1,19 @@
 
 .dashboard{
+    overflow: hidden;
     .module{
         background-color: #607D8B;
         border-radius: 2px;
         padding: 20px;
         cursor: pointer;
         margin-bottom: 20px;
+
+
+        position: relative;
+        -webkit-animation:  fadeIn 2s ease-in-out ; /* Safari 4.0 - 8.0 */
+        animation: fadeIn 1s ease-in-out;
+        animation-fill-mode: forwards;
+        opacity: 0;
         a{
             list-style-type: none;
             color: #eee;
@@ -15,7 +23,31 @@
         &:hover{
             background: blue;
         }
-        
+       
     }
+    @extend %loopAnimationDelayTime;
 }
+//////LOOPING CHILD ITEM FOR TIME-DELAY ANIMATION//////////
+%loopAnimationDelayTime{
+    @for $i from 1 through 10 {
+        .module:nth-child(#{$i}) {
+          -webkit-animation-delay:(#{$i*0.1s}); 
+          animation-delay:(#{$i*0.1s}); 
+         
+        }
+      }
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeIn {
+
+    0%  {bottom: -200px;opacity:0}
+    100% {bottom: 0px;opacity:1}
+}
+
+@keyframes fadeIn {
+    from {bottom: -200px;opacity:0}
+    to {bottom: 0px;opacity:1}
     
+}

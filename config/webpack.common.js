@@ -85,7 +85,8 @@ module.exports = {
 		}),
 
 		new CopyWebpackPlugin([
-			{ from: 'src/assets', to: 'assets' }
+			{ from: 'src/assets', to: 'assets' },
+			{ from: 'src/public', to: 'public' }
 		]),
 
 		new webpack.ProvidePlugin({

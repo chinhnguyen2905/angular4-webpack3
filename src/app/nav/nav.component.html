@@ -3,15 +3,17 @@
         <li fxFlex >
             <a [matMenuTriggerFor]="appMenu" routerLink="/home"  routerLinkActive="active">Home</a>
         </li>
-        <li fxFlex><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+        <li fxFlex><a routerLink="/shop"  routerLinkActive="active">Shop</a></li>
         <li fxFlex><a routerLink="/products" routerLinkActive="active">Products</a></li>
         <li fxFlex><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li fxFlex><a routerLink="/bpmnio" routerLinkActive="active">BPMNIO</a></li>
         <li fxFlex="initial"><a routerLink="/examples" routerLinkActive="active">Example Material</a></li>
     </ul>
    
 </nav>
 
 <mat-menu class="submenu" #appMenu="matMenu" xPostion="after" [overlapTrigger]="false">
-    <a class="item-sub" mat-menu-item routerLink="/dashboard" >Dashboard</a>
+    <a class="item-sub" mat-menu-item routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
     <a class="item-sub" mat-menu-item routerLink="/heroes" >Hero</a >
+    <a class="item-sub" mat-menu-item routerLink="/todolist">To Do List</a>
 </mat-menu>

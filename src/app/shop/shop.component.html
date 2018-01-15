@@ -1,4 +1,5 @@
 <mat-card>
+    <h1>USING NGX-LOADING, AND ANGULAR ANIMATION</h1>
     <div fxLayout fxLayout.xs="column" fxLayoutWrap  class="weather">
         <div fxFlex="100">
             <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading> 
@@ -28,6 +29,8 @@
     <button mat-raised-button color="primary" (click)="getAPI();">GET API</button>
     <mat-progress-spinner mode="indeterminate" *ngIf="isShowSpinner"  class="spinner-loading" color="primary"></mat-progress-spinner>
 </mat-card>
+
+
 
 
    

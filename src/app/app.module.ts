@@ -63,11 +63,11 @@ import { HttpClientModule } from '@angular/common/http';
 			useClass:AuthInterceptor,
 			multi:true
 		},*/
-		{
+		/*{
 			provide: HTTP_INTERCEPTORS,
 			useClass: RequestInterceptorService,
 			multi: true
-		}
+		}*/
 	],
 	bootstrap: [AppComponent]
 })

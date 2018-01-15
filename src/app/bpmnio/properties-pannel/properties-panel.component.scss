@@ -1,0 +1,41 @@
+
+
+  body, html {
+  
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+    font-size: 12px;
+  
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a:link {
+    text-decoration: none;
+  }
+  
+
+  
+  #js-properties-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    z-index: 10;
+    border-left: 1px solid #ccc;
+    overflow: auto;
+  }
+  
+  
+  .buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
