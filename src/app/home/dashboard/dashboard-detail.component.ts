@@ -4,13 +4,12 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs/Observable';
 
-
-
 @Component({
 	selector: 'dashboard-detail-app',
 	templateUrl: 'dashboard-detail.component.html',
 	styleUrls: ['dashboard-detail.component.scss'],
 	providers: [HeroService]
+	
 })
 export class DashboardDetailComponent implements OnInit {
     hero$ :  Observable<Hero>;

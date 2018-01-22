@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MatSidenavModule,MatMenuModule,MatTooltipModule,MatDialogModule,MatButtonModule,MatDatepickerModule,MatTabsModule,MatInputModule,MatFormFieldModule,MatExpansionModule,MatIconModule,MatProgressBarModule,MatSliderModule,MatProgressSpinnerModule,MatCheckboxModule,MatSlideToggleModule,MatRadioModule,MatToolbarModule,MatCardModule, MatDatepicker, MatNativeDateModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
+import { MatSidenavModule,MatMenuModule,MatTooltipModule,MatDialogModule,MatButtonModule,MatDatepickerModule,MatTabsModule,MatInputModule,MatFormFieldModule,MatExpansionModule,MatIconModule,MatProgressBarModule,MatSliderModule,MatProgressSpinnerModule,MatCheckboxModule,MatSlideToggleModule,MatRadioModule,MatToolbarModule,MatCardModule, MatDatepicker, MatNativeDateModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDividerModule, MatSelectModule} from '@angular/material';
 
 @NgModule({
 	imports: [
@@ -24,6 +24,8 @@ import { MatSidenavModule,MatMenuModule,MatTooltipModule,MatDialogModule,MatButt
         MatToolbarModule,
         MatTooltipModule,
         MatPaginatorModule,
+        MatDividerModule,
+        MatSelectModule,
         MatSortModule
 	],
 	declarations:[
@@ -51,7 +53,9 @@ import { MatSidenavModule,MatMenuModule,MatTooltipModule,MatDialogModule,MatButt
         MatToolbarModule,
         MatTooltipModule,
         MatTableModule,
+        MatSelectModule,
         MatPaginatorModule,
+        MatDividerModule,
         MatSortModule
     ]
 })

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ShopComponent } from './shop.component';
 import { ShopService } from './shop.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingModule } from 'ngx-loading';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,6 +17,7 @@ const routesConfig: Routes = [
 	imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         LoadingModule,
         MaterialModule,
         FlexLayoutModule,

@@ -1,9 +1,13 @@
 import { Component,OnInit,ViewChild} from '@angular/core';
 import { ShopService } from './shop.service';
 import { MatDialog } from '@angular/material';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { PopupWeatherComponent } from './weather-popup/weather-popup.component';
 import { slideInDownAnimation } from '../animation';
 import { HostBinding } from '@angular/core';
+
 
 @Component({
 	selector: 'shop',
@@ -23,11 +27,27 @@ export class ShopComponent implements OnInit{
 	cityname ="";
 	cityNameText = "";
 	isShowPopup = false;
-    constructor(private shopService:ShopService,public dialog: MatDialog){
+
+	//for form 
+	selectedValue: string;
+	foods = [
+		{value: 'steak-0', viewValue: 'Steak'},
+		{value: 'pizza-1', viewValue: 'Pizza'},
+		{value: 'tacos-2', viewValue: 'Tacos'}
+	];
+	firstForm: FormGroup;
+	/////////////////////////////////
+
+    constructor(private fb:FormBuilder,private shopService:ShopService,public dialog: MatDialog){
 
 	}
 	ngOnInit(){
-		
+		this.firstForm = this.fb.group({
+            email : ["", Validators.email],
+			name: ["",Validators.required],
+			address: ["",Validators.required],
+			selectedFood: ""
+        })  
 	}
 
 	//get weather for no need authenticate(token) user (using  Http)
@@ -81,4 +101,22 @@ export class ShopComponent implements OnInit{
 		   this.cityNameText ="";
         });
 	}
+
+
+	submitForm(){
+		
+		if(this.firstForm.valid){
+			console.log(this.firstForm);
+		}
+	}
+
+	getErrorMessage() {
+      //  return (this.firstForm.controls.email && this.firstForm.controls.email.errors&& this.firstForm.controls.email.errors.email) ? 'You must enter a value' :
+	 //  (this.firstForm.controls.email&& this.firstForm.controls.email.invalid) ? 'Not a valid email' : '';
+	 
+	 return this.firstForm.controls.email.hasError('required') ? 'You must enter a value' :
+	 this.firstForm.controls.email.hasError('email') ? 'Not a valid email' : '';
+	  }
+	  
+	  
 }

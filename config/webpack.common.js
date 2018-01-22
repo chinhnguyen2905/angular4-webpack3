@@ -71,7 +71,7 @@ module.exports = {
 					use: ['raw-loader', 'sass-loader']
 				})
 
-			}
+			}		 
 		]
 	},
 

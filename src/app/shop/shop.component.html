@@ -29,6 +29,40 @@
     <button mat-raised-button color="primary" (click)="getAPI();">GET API</button>
     <mat-progress-spinner mode="indeterminate" *ngIf="isShowSpinner"  class="spinner-loading" color="primary"></mat-progress-spinner>
 </mat-card>
+<br>
+<mat-card>
+    <div class="form-test">
+    <form fxLayout="row wrap" fxLayoutAlign="space-between" [formGroup]="firstForm" (ngSubmit)="submitForm()">
+        <mat-form-field fxFlex="45">
+          <input matInput type="text" placeholder="Address" formControlName="address" required>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+            <input matInput type="text" placeholder="Name" formControlName="name" required>
+        </mat-form-field> 
+        <div fxFlex="100" class="divider-line">
+             <mat-divider ></mat-divider>
+        </div>
+       
+        <mat-form-field fxFlex="45">
+            <input matInput type="email" formControlName="email" placeholder="Enter your email" required email>
+            <mat-error *ngIf="firstForm.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+            <mat-select placeholder="Favorite food" formControlName="selectedFood" name="food">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div fxFlex="100" class="go-btn">
+            <button mat-fab color="primary">Go</button>
+        </div>
+        
+    </form>
+</div>
+</mat-card>
+
+
 
 
 

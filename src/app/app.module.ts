@@ -12,7 +12,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NavComponent} from './nav/nav.component';
 
 import { format } from 'url';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpModule } from '@angular/http';
 import { LoadingModule } from 'ngx-loading';
@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 	imports: [
 		BrowserModule,
 		FormsModule,
+		ReactiveFormsModule,
 		BrowserAnimationsModule,
 		FlexLayoutModule,
 		MaterialModule,

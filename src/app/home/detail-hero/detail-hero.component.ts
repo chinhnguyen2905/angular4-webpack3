@@ -7,7 +7,7 @@ import { Hero } from '../hero';
 	styleUrls: ['detail-hero.component.scss']
 })
 export class DetailHeroComponent {
-    @Input() hero: Hero;
+    @Input() hero11: Hero;
      constructor(){}
      ngOnInit(){
 
