@@ -1,0 +1,21 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+  }
+  
+  .mat-table {
+    overflow: inherit;
+    max-height: 500px;
+    .mat-row{
+        &:nth-child(even) {
+            background: lightcyan;
+        }
+    }
+   
+  }
+  
+  .mat-column-select {
+    overflow: visible;
+  }

@@ -1,0 +1,33 @@
+
+.responsibility{
+    margin-top: 5px;
+   
+    .responsibility-container{
+        // border:grey solid 1px;
+        max-height: 300px;
+         background: #f9f9f9;
+        // overflow: inherit;
+        .responscroll{
+           //max-height: 220px;
+           //overflow: auto;
+            .content-res{
+                max-height: 220px;
+                overflow: auto;
+               overflow: inherit;
+             }
+        }
+     }
+}
+
+.mat-chip:not(.mat-basic-chip) {
+ 
+    margin: 2px;
+    background: lightblue;
+}
+
+.save-btn{
+    margin: 10px 0;
+    text-align: right;
+}
+
+

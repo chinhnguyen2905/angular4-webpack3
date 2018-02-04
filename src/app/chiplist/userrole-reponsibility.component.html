@@ -1,0 +1,65 @@
+<mat-card>
+    <div class="container-fluid" >
+        <form class="container" [formGroup]="formResponsibility" novalidate>
+                <div class="row">
+                    <mat-form-field>
+                        <input matInput placeholder="Role Name" type="text" formControlName="roleName">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                        <mat-card class="col-md-6 responsibility">
+
+                                <label>Reponsibility Name</label>
+                                <mat-card class="responsibility-container container-fluid">
+                                        <mat-chip-list >
+                                                <span *ngFor="let itemChip of resList" >
+                                                    <mat-chip *ngIf="itemChip.isActive" [selectable]="selectable"
+                                                    [removable]="true" (remove)="remove(itemChip)">
+                                                        {{itemChip.responsibilityName}}
+                                                        <mat-icon matChipRemove>cancel</mat-icon>
+                                                    </mat-chip>
+                                                </span>
+                                                
+                                            </mat-chip-list>
+                                </mat-card>
+                            </mat-card>
+                      
+                            <div class="col-md-1"></div>
+                       
+                    <mat-card class="col-md-5 responsibility">
+                        <label for="">Select reponsibility</label>
+                       
+                        <mat-card class="container-fluid responsibility-container" >
+                                <perfect-scrollbar class="responscroll" [config]="config">
+                                    <div class="content-res">
+                                        <div *ngFor="let res of resList" class="row">
+                                            <div class="col-sm-8">
+                                                <label> {{res.responsibilityName}}</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <mat-slide-toggle 
+                                                    class="example-margin"
+                                                    [color]="accent"
+                                                    [checked]="res.isActive"
+                                                    [disabled]="false"
+                                                    (change)="onChange(res,$event)">
+                                                </mat-slide-toggle>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </perfect-scrollbar> 
+                               
+                        </mat-card>
+                   
+                    </mat-card>
+                    
+                </div>
+        </form>
+    </div>
+    <div class="save-btn">
+        <button mat-raised-button>
+                <mat-icon class="mat-18">save</mat-icon>
+                Save
+        </button>
+    </div>
+</mat-card>
