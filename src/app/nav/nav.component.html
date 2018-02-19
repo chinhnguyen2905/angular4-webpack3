@@ -14,8 +14,10 @@
 
 <mat-menu class="submenu" #appMenu="matMenu" xPostion="after" [overlapTrigger]="false">
     <a class="item-sub" mat-menu-item routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a class="item-sub" mat-menu-item routerLink="/heroes" >Hero</a >
-    <a class="item-sub" mat-menu-item routerLink="/todolist">To Do List</a>
-    <a class="item-sub" mat-menu-item routerLink="/data-table">Checkbox Table</a>
+    <a class="item-sub" [hasPermission]="['DELETE_DISBMT_WORKFLOW','CREATE_USER']" mat-menu-item routerLink="/heroes" >Hero</a >
+    <a class="item-sub" [hasPermission]="['TODO_LIST']" mat-menu-item routerLink="/todolist">To Do List</a>
+    <button class="item-sub" [hasPermission]="['CREATE_DISBMT_WORKFLOW_TEST']"
+                        [onAuthorizedPermission]="OnAuthorizedPermission"
+                        [onUnauthorizedPermission]="OnUnauthorizedPermission" mat-menu-item routerLink="/data-table">Checkbox Table</button>
     <a class="item-sub" mat-menu-item routerLink="/chiplist">Chip List</a>
 </mat-menu>

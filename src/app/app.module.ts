@@ -25,6 +25,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './authguard/auth.interceptor';
 import { RequestInterceptorService } from './authguard/request-interceptor.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2Permission } from 'angular2-permission';
 
 @NgModule({
 	imports: [
@@ -36,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 		MaterialModule,
 		AppRoutingModule,
 		HttpClientModule,
+		Ng2Permission,
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
 			backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
